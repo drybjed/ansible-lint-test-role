@@ -1,0 +1,11 @@
+---
+
+- name: Working task
+  ansible.builtin.debug:
+    msg: "I'm working!"
+
+- name: Failing task
+  vars:
+    test_role__var_check: true
+  ansible.builtin.debug:
+    msg: '{{ "Is the role working? " ~ test_role__var_check }}'
